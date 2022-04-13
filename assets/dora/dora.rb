@@ -38,6 +38,10 @@ class Dora < Sinatra::Base
       "I'm alive"
     end
   end
+  
+  get '/raise/:code' do
+    status params[:code].to_i
+  end
 
   get '/ping/:address' do
     `ping -c 4 #{params[:address]}`
