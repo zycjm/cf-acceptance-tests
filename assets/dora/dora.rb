@@ -42,6 +42,11 @@ class Dora < Sinatra::Base
   get '/raise/:code' do
     status params[:code].to_i
   end
+  
+  
+  get '/sleep/:seconds' do
+    sleep params[:seconds]
+  end
 
   get '/ping/:address' do
     `ping -c 4 #{params[:address]}`
